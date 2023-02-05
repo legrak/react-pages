@@ -34,17 +34,11 @@ jobs:
       - uses: actions/download-artifact@v3.0.2
         with:
           name: bundle
-      
-      - uses: cpina/github-action-push-to-another-repository@v1.5.1
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+          path: docs
+    
+      - uses: EndBug/add-and-commit@v9.1.1
         with:
-          source-directory: .
-          destination-github-username: 'legrak'
-          destination-repository-name: 'pages-hosting'
-          user-email: github_actions_bot@github.com
-          target-branch: main
-
-
+          add: docs
+          push: true
 
       
