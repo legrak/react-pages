@@ -1,0 +1,24 @@
+{
+  "name": "react-pages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "postbuild": "yarn clean && yarn copy-build",
+    "clean": "rimraf dist",
+    "copy-build": "copyfiles -u 1 packages/*/build/* dist"
+  },
+  "devDependencies": {
+    "lerna": "^6.4.1",
+    "typescript": "^4.9.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^4.1.2"
+  }
+}
