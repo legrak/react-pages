@@ -35,8 +35,16 @@ jobs:
         with:
           name: bundle
       
-      - uses: EndBug/add-and-commit@v9.1.1
+      - uses: cpina/github-action-push-to-another-repository@v1.5.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         with:
-          push: true
-          
+          source-directory: .
+          destination-github-username: 'legrak'
+          destination-repository-name: 'pages-hosting'
+          user-email: bot@github.com
+          target-branch: main
+
+
+
       
