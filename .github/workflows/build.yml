@@ -1,0 +1,24 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build Bundle
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/setup-node@v3.6.0
+      - uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+      - uses: actions/upload-artifact@v3.1.2
+        with:
+          name: bundle
+          path: dist
+          if-no-files-found: error
