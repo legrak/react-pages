@@ -22,3 +22,21 @@ jobs:
           name: bundle
           path: dist
           if-no-files-found: error
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3.3.0
+        with:
+          repository: legrak/pages-hosting
+      
+      - uses: actions/download-artifact@v3.0.2
+        with:
+          name: bundle
+      
+      - uses: EndBug/add-and-commit@v9.1.1
+        with:
+          push: true
+          
+      
