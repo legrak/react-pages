@@ -28,9 +28,7 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v3.3.0
-        with:
-          repository: legrak/pages-hosting
-      
+
       - uses: actions/download-artifact@v3.0.2
         with:
           name: bundle
