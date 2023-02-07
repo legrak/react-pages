@@ -3,4 +3,4 @@ import { createRoot } from "react-dom/client";
 
 const container = document.getElementById("app-root")!;
 const root = createRoot(container);
-root.render(<h1>About Page</h1>);
+root.render(<h1>Contact Us Page</h1>);

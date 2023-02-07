@@ -9,16 +9,25 @@ jobs:
   build:
     name: Build Bundle
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v3.3.0
-      - uses: actions/setup-node@v3.6.0
-      - uses: borales/actions-yarn@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Setup node
+        uses: actions/setup-node@v3.6.0
+
+      - name: Run `yarn install`
+        uses: borales/actions-yarn@v4
         with:
           cmd: install
-      - uses: borales/actions-yarn@v4
+
+      - name: Run `yarn build`
+        uses: borales/actions-yarn@v4
         with:
           cmd: build
-      - uses: actions/upload-artifact@v3.1.2
+
+      - name: Updaload build artifact
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: bundle
           path: dist/**
@@ -28,22 +37,24 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - uses: actions/checkout@v3.3.0
+      - name: Checkout to github pages branch
+        uses: actions/checkout@v3.3.0
         with:
           ref: gh-pages
 
-      - uses: JesseTG/rm@v1.0.0
+      - name: Clean up old pages content
+        uses: JesseTG/rm@v1.0.0
         with:
           path: ./pages
 
-      - uses: actions/download-artifact@v3.0.2
+      - name: Download build artifact
+        uses: actions/download-artifact@v3.0.2
         with:
           name: bundle
           path: pages
-    
-      - uses: EndBug/add-and-commit@v9.1.1
+
+      - name: Commit new pages
+        uses: EndBug/add-and-commit@v9.1.1
         with:
           add: pages
           push: true
-
-      
