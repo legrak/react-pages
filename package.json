@@ -8,7 +8,7 @@
     "build": "lerna run build",
     "postbuild": "yarn clean && yarn copy-build",
     "clean": "rimraf dist",
-    "copy-build": "copyfiles -V -u 1 \"packages/*/dist/**/*\" dist/pages"
+    "copy-build": "copyfiles -V -u 1 \"packages/*/dist/**/*\" dist"
   },
   "devDependencies": {
     "lerna": "^6.4.1",

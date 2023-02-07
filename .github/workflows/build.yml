@@ -32,14 +32,18 @@ jobs:
         with:
           ref: gh-pages
 
+      - uses: JesseTG/rm@v1.0.0
+        with:
+          path: ./pages
+
       - uses: actions/download-artifact@v3.0.2
         with:
           name: bundle
-          path: docs
+          path: pages
     
       - uses: EndBug/add-and-commit@v9.1.1
         with:
-          add: docs
+          add: pages
           push: true
 
       
