@@ -2,6 +2,9 @@
   "name": "home-page",
   "version": "1.0.0",
   "scripts": {
+    "clean": "rimraf ./dist",
+    "build:ts": "yarn build:ts",
+    "prebuild": "yarn clean && yarn build:ts",
     "start": "webpack serve --port 3000",
     "build": "webpack --mode production"
   },
