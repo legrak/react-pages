@@ -1,0 +1,1 @@
+{"version":3,"file":"send-message.js","sourceRoot":"","sources":["../../../src/messaging/send-message.ts"],"names":[],"mappings":"AAEA;;;;GAIG;AACH,MAAM,UAAU,WAAW,CAA6B,OAAU;IAChE,IAAI,CAAC,MAAM,CAAC,MAAM,EAAE;QAClB,MAAM,IAAI,KAAK,CACb,kFAAkF,CACnF,CAAC;KACH;IAED,MAAM,CAAC,MAAM,CAAC,WAAW,CAAC,OAAO,EAAE,GAAG,CAAC,CAAC;AAC1C,CAAC"}

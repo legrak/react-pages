@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA;EACE,0BAA0B;EAC1B,eAAe;AACjB","sources":["webpack://navigation-test/./src/link.css"],"sourcesContent":[".link {\n  text-decoration: underline;\n  cursor: pointer;\n}\n"],"names":[],"sourceRoot":""}
