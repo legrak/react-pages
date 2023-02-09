@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@legrak/*": ["packages/*"]
+    },
+  },
+  "references": [{ "path": "./packages/wix-sdk" }]
+}

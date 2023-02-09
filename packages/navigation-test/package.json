@@ -1,5 +1,5 @@
 {
-  "name": "@legrak/home-page",
+  "name": "navigation-test",
   "version": "1.0.0",
   "scripts": {
     "clean": "rimraf ./dist",
